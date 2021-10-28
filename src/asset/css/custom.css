@@ -6,14 +6,54 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .topBannerOverlay{
     position: absolute;
     min-height: 500px;
     width: 100%;
     background: rgba(0,0,0,0.6);
 }
-
 .topContent{
-
+    margin-top: 10rem;
+}
+.topTitle {
+    font-family: 'montserreat', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 48px;
+}
+.topSubTitle{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 22px;
+}
+.serviceMainTitle {
+    color: #0c63e4;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-family: 'montserreat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+.serviceName {
+    margin-top: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+.serviceDescription {
+    margin-top: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #7F7E7E;
+}
+.serviceCard {
+    margin: 5px 5px 5px 5px;
+    height: 25rem;
+    padding: 60px 30px 60px 30px;
+    box-shadow: 0 0 4px 0 rgba(0,115,230, 0.2);
+}
+.serviceCard:hover {
+    box-shadow: 0 0 8px 0 rgba(0,115,230, 0.2);
 }
