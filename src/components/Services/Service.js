@@ -19,7 +19,6 @@ class Service extends Component {
                                 <h2 className="serviceName">Web Development</h2>
                                 <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur explicabo facilis molestias qui,
                                     repellendus totam ullam voluptatum. A alias asperiores consequatur eos illo maiores, praesentium
-                                    quae quis quod reprehenderit.
                                 </p>
                             </div>
                         </Col>
@@ -29,7 +28,6 @@ class Service extends Component {
                                 <h2 className="serviceName">Mobile Development</h2>
                                 <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur explicabo facilis molestias qui,
                                     repellendus totam ullam voluptatum. A alias asperiores consequatur eos illo maiores, praesentium
-                                    quae quis quod reprehenderit.
                                 </p>
                             </div>
                         </Col>
@@ -39,7 +37,6 @@ class Service extends Component {
                                 <h2 className="serviceName">Graphics Design</h2>
                                 <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur explicabo facilis molestias qui,
                                     repellendus totam ullam voluptatum. A alias asperiores consequatur eos illo maiores, praesentium
-                                    quae quis quod reprehenderit.
                                 </p>
                             </div>
                         </Col>

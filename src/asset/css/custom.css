@@ -28,7 +28,7 @@
     font-size: 22px;
 }
 .serviceMainTitle {
-    color: #0c63e4;
+    color: #2e79ea;
     margin-top: 5rem;
     margin-bottom: 3rem;
     font-family: 'montserreat', sans-serif;
@@ -56,4 +56,50 @@
 }
 .serviceCard:hover {
     box-shadow: 0 0 8px 0 rgba(0,115,230, 0.2);
+}
+.navTitle {
+    font-family: 'montserreat', sans-serif;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 24px;
+}
+.navTitleScroll {
+    font-family: 'montserreat', sans-serif;
+    color: #2e7aec !important;
+    font-weight: 700;
+    font-size: 24px;
+}
+.navBackground {
+    -o-transition: background-color 400ms linear;
+    -moz-transition: background-color 400ms linear;
+    -webkit-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+    background-color: rgba(00,00,00,0.0) !important;
+}
+.navBackgroundScroll {
+    -o-transition: background-color 400ms linear;
+    -moz-transition: background-color 400ms linear;
+    -webkit-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+    background-color: #ffffff !important;
+}
+.navItem {
+    font-size: 16px;
+    text-decoration: none !important;
+    font-family: 'montserreat', sans-serif;
+    font-weight: 400;
+    color: #ffffff !important;
+}
+.navItemScroll {
+    font-size: 16px;
+    text-decoration: none !important;
+    font-family: 'montserreat', sans-serif;
+    font-weight: 400;
+    color: #000000 !important;
+}
+.des{
+    font-weight: 400;
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
 }
