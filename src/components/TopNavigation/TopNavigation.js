@@ -1,18 +1,21 @@
 import React, {Component, Fragment} from 'react';
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import '../../asset/css/custom.css';
 import '../../asset/css/bootstrap.min.css';
 import whileLogo from '../../asset/image/navlogo.svg';
 import blueLogo from '../../asset/image/navlogoScroll.svg';
+import {NavLink} from "react-router-dom";
 
 class TopNavigation extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state={
             navBarTitle:"navTitle",
             navBarLogo: [whileLogo],
             navBarBack: "navBackground",
-            navBarItem: "navItem"
+            navBarItem: "navItem",
+            navVariant: 'dark',
+            pageTitle: props.title
         }
     }
 
@@ -22,14 +25,16 @@ class TopNavigation extends Component {
                 navBarTitle: "navTitleScroll",
                 navBarBack: "navBackgroundScroll",
                 navBarLogo: [blueLogo],
-                navBarItem: "navItemScroll"
+                navBarItem: "navItemScroll",
+                navVariant: 'light'
             })
         } else if(window.scrollY < 100) {
             this.setState({
                 navBarTitle: "navTitle",
                 navBarBack: "navBackground",
                 navBarLogo: [whileLogo],
-                navBarItem: "navItem"
+                navBarItem: "navItem",
+                navVariant: 'dark'
             })
         }
     }
@@ -41,7 +46,8 @@ class TopNavigation extends Component {
     render() {
         return (
             <Fragment>
-                <Navbar className={this.state.navBarBack} fixed="top" collapseOnSelect expand="lg" variant="dark">
+                <title>{ this.state.pageTitle }</title>
+                <Navbar variant={this.state.navVariant} className={this.state.navBarBack} fixed="top" collapseOnSelect expand="lg">
                     <Container fluid={true}>
                         <Navbar.Brand className={this.state.navBarTitle} href="#home">
                             <img src={this.state.navBarLogo}/> ARABI KABIR
@@ -50,12 +56,12 @@ class TopNavigation extends Component {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto"></Nav>
                             <Nav>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">HOME</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">SERVICES</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">COURSES</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">PORTFOLIO</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">CONTACT</Nav.Link>
-                                <Nav.Link className={this.state.navBarItem} href="#deets">ABOUT</Nav.Link>
+                                <Nav.Link> <NavLink exact activeStyle={{ color: '#00a8ee' }} className={this.state.navBarItem} to="/">HOME</NavLink> </Nav.Link>
+                                <Nav.Link> <NavLink exact activeStyle={{ color: '#00a8ee' }} className={this.state.navBarItem} to="/service">SERVICES</NavLink> </Nav.Link>
+                                <Nav.Link> <NavLink exact activeStyle={{ color: '#00a8ee' }} className={this.state.navBarItem} to="/course">COURSES</NavLink> </Nav.Link>
+                                <Nav.Link> <NavLink exact activeStyle={{ color: '#00a8ee' }} className={this.state.navBarItem} to="/portfolio">PORTFOLIO</NavLink> </Nav.Link>
+                                <Nav.Link> <NavLink exact activeStyle={{ color: '#00a8ee' }} className={this.state.navBarItem} to="/contact">CONTACT</NavLink> </Nav.Link>
+                                <Nav.Link> <NavLink exact activeStyle={{ color: '#00a8ee' }} className={this.state.navBarItem} to="/about">ABOUT</NavLink> </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

@@ -39,13 +39,13 @@ class Analysis extends Component {
                         </Col>
 
                         <Col sm={12} md={12} lg={6}>
-                            <p className="text-justify des">
+                            <p style={{ textAlign: 'justify' }} className="des">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at atque culpa
                                 dolorum eligendi hic, nemo numquam perspiciatis quisquam repudiandae tenetur vel,
                                 voluptatem. Architecto assumenda commodi cupiditate perferendis rerum velit.
                             </p>
 
-                            <p className="text-justify des">
+                            <p style={{ textAlign: 'justify' }} className="des">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at atque culpa andae tenetur vel,
                                 voluptatem. Architecto assumenda commodi cupiditate perferendis rerum velit.
                             </p>
