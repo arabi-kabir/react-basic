@@ -3,6 +3,7 @@ import {Container, Row, Col} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faFacebook, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faPhone, faPlayCircle} from "@fortawesome/free-solid-svg-icons";
+import {NavLink, Link} from "react-router-dom";
 
 class Footer extends Component {
     render() {
@@ -35,9 +36,9 @@ class Footer extends Component {
 
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
                             <h1 className="serviceName">Legal</h1>
-                            <a className="footerLink" href="#">Refund Policy</a>
+                            <Link to="/refund" className="footerLink">Refund Policy</Link>
                             <br/>
-                            <a className="footerLink" href="#">Terms and condition</a>
+                            <Link to="/terms" className="footerLink">Terms and condition</Link>
                             <br/>
                             <a className="footerLink" href="#">Privacy Policy</a>
                         </Col>
