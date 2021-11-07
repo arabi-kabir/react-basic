@@ -62,12 +62,21 @@
     color: #ffffff !important;
     font-weight: 700;
     font-size: 24px;
+    text-decoration: none;
+}
+.navTitle:hover {
+    font-family: 'montserreat', sans-serif;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: none;
 }
 .navTitleScroll {
     font-family: 'montserreat', sans-serif;
     color: #2e7aec !important;
     font-weight: 700;
     font-size: 24px;
+    text-decoration: none;
 }
 .navBackground {
     -o-transition: background-color 400ms linear;
@@ -82,6 +91,7 @@
     -webkit-transition: background-color 400ms linear;
     transition: background-color 400ms linear;
     background-color: #ffffff !important;
+    box-shadow: 0 0 6px 0 rgba(0,115,230,0.3) !important;
 }
 .navItem {
     font-size: 16px;
@@ -292,6 +302,27 @@
 .topPageContent{
     margin-top: 9rem;
 }
+.topPageContentCourse{
+    margin-top: 6rem;
+}
+.courseFullTitle {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+.courseFullSubtitle {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+.courseFullDes {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
 .pageTitle {
     font-family: 'montserreat', sans-serif;
     font-weight: 700;
@@ -302,4 +333,12 @@
     border-radius: 2px !important;
     border-color: #0b5ed7 !important;
     box-shadow: 0 0 4px 0 rgba(0,115,230, 0.2) !important;
+}
+.link-style {
+    color: white !important;
+    text-decoration: none !important;
+}
+.link-style:hover {
+    color: white !important;
+    text-decoration: none !important;
 }

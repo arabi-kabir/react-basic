@@ -27,11 +27,9 @@ class Footer extends Component {
 
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
                             <h1 className="serviceName">Information</h1>
-                            <a className="footerLink" href="#">About Me</a>
+                            <Link to="/about" className="footerLink" href="#">About Me</Link>
                             <br/>
-                            <a className="footerLink" href="#">My Resume</a>
-                            <br/>
-                            <a className="footerLink" href="#">Contact Me</a>
+                            <Link to="/contact" className="footerLink" href="#">Contact Me</Link>
                         </Col>
 
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
@@ -40,7 +38,7 @@ class Footer extends Component {
                             <br/>
                             <Link to="/terms" className="footerLink">Terms and condition</Link>
                             <br/>
-                            <a className="footerLink" href="#">Privacy Policy</a>
+                            <Link to="/privacy" className="footerLink">Privacy Policy</Link>
                         </Col>
                     </Row>
                 </Container>

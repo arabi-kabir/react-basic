@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 class Courses extends Component {
     render() {
@@ -18,7 +19,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="courseTitle" style={{ textAlign: 'justify' }}>Web Development</h5>
                                     <p className="courseDes" style={{ textAlign: 'justify' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur cupiditate, doloribus earum error expli</p>
-                                    <a className="courseDetails" style={{ float: 'left' }} href='#'>Details</a>
+                                    <Link className="courseDetails" style={{ float: 'left' }} to="/course-details">Details</Link>
                                 </Col>
                             </Row>
                         </Col>
@@ -32,7 +33,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="courseTitle" style={{ textAlign: 'justify' }}>Web Development</h5>
                                     <p className="courseDes" style={{ textAlign: 'justify' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur cupiditate, doloribus earum error expli</p>
-                                    <a className="courseDetails" style={{ float: 'left' }} href='#'>Details</a>
+                                    <Link className="courseDetails" style={{ float: 'left' }} to="/course-details">Details</Link>
                                 </Col>
                             </Row>
                         </Col>
@@ -48,7 +49,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="courseTitle" style={{ textAlign: 'justify' }}>Web Development</h5>
                                     <p className="courseDes" style={{ textAlign: 'justify' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur cupiditate, doloribus earum error expli</p>
-                                    <a className="courseDetails" style={{ float: 'left' }} href='#'>Details</a>
+                                    <Link className="courseDetails" style={{ float: 'left' }} to="/course-details">Details</Link>
                                 </Col>
                             </Row>
                         </Col>
@@ -62,7 +63,7 @@ class Courses extends Component {
                                 <Col lg={6} md={6} sm={12}>
                                     <h5 className="courseTitle" style={{ textAlign: 'justify' }}>Web Development</h5>
                                     <p className="courseDes" style={{ textAlign: 'justify' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur cupiditate, doloribus earum error expli</p>
-                                    <a className="courseDetails" style={{ float: 'left' }} href='#'>Details</a>
+                                    <Link className="courseDetails" style={{ float: 'left' }} to="/course-details">Details</Link>
                                 </Col>
                             </Row>
                         </Col>
