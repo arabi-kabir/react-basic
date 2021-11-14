@@ -53,7 +53,7 @@ class ClientReview extends Component {
                         <div>
                             <Row className="text-center justify-content-center">
                                 <Col lg={6} md={6} sm={12}>
-                                    <img src="https://www.pngarts.com/files/5/User-Avatar-Transparent.png" className="circleImg" />
+                                    <img alt="img" src="https://www.pngarts.com/files/5/User-Avatar-Transparent.png" className="circleImg" />
                                     <h1 className="serviceName">Web Development</h1>
                                     <p className="serviceDescription">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aspernatur at consequatur consequuntur, cupiditate delectus dolorum
@@ -66,7 +66,7 @@ class ClientReview extends Component {
                         <div>
                             <Row className="text-center justify-content-center">
                                 <Col lg={6} md={6} sm={12}>
-                                    <img src="https://www.pngarts.com/files/5/User-Avatar-Transparent.png" className="circleImg" />
+                                    <img alt="img" src="https://www.pngarts.com/files/5/User-Avatar-Transparent.png" className="circleImg" />
                                     <h1 className="serviceName">Web Development</h1>
                                     <p className="serviceDescription">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aspernatur at consequatur consequuntur, cupiditate delectus dolorum
@@ -79,7 +79,7 @@ class ClientReview extends Component {
                         <div>
                             <Row className="text-center justify-content-center">
                                 <Col lg={6} md={6} sm={12}>
-                                    <img src="https://www.pngarts.com/files/5/User-Avatar-Transparent.png" className="circleImg" />
+                                    <img alt="img" src="https://www.pngarts.com/files/5/User-Avatar-Transparent.png" className="circleImg" />
                                     <h1 className="serviceName">Web Development</h1>
                                     <p className="serviceDescription">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aspernatur at consequatur consequuntur, cupiditate delectus dolorum

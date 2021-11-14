@@ -10,7 +10,7 @@ class AllProjects extends Component {
                     <Row>
                         <Col className="p-2" sm={12} md={6} lg={4}>
                             <Card className="projectCard">
-                                <Card.Img variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
+                                <Card.Img alt="img" variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
                                 <Card.Body>
                                     <Card.Title className="projectCardTitle">Card Title</Card.Title>
                                     <Card.Text className="projectCardDes">
@@ -24,7 +24,7 @@ class AllProjects extends Component {
 
                         <Col className="p-2" sm={12} md={6} lg={4}>
                             <Card className="projectCard">
-                                <Card.Img variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
+                                <Card.Img alt="img" variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
                                 <Card.Body>
                                     <Card.Title className="projectCardTitle">Card Title</Card.Title>
                                     <Card.Text className="projectCardDes">
@@ -38,7 +38,7 @@ class AllProjects extends Component {
 
                         <Col className="p-2" sm={12} md={6} lg={4}>
                             <Card className="projectCard">
-                                <Card.Img variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
+                                <Card.Img alt="img" variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
                                 <Card.Body>
                                     <Card.Title className="projectCardTitle">Card Title</Card.Title>
                                     <Card.Text className="projectCardDes">

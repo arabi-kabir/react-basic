@@ -2,8 +2,8 @@ import React, {Component, Fragment} from 'react';
 import {Container, Row, Col} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faFacebook, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope, faPhone, faPlayCircle} from "@fortawesome/free-solid-svg-icons";
-import {NavLink, Link} from "react-router-dom";
+import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 class Footer extends Component {
     render() {

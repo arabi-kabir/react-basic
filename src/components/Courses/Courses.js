@@ -13,7 +13,7 @@ class Courses extends Component {
                         <Col sm={12} md={6} lg={6}>
                             <Row>
                                 <Col lg={6} md={6} sm={12}>
-                                    <img className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
+                                    <img alt="img" className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
                                 </Col>
 
                                 <Col lg={6} md={6} sm={12}>
@@ -27,7 +27,7 @@ class Courses extends Component {
                         <Col sm={12} md={6} lg={6}>
                             <Row>
                                 <Col lg={6} md={6} sm={12}>
-                                    <img className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
+                                    <img alt="img" className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
                                 </Col>
 
                                 <Col lg={6} md={6} sm={12}>
@@ -43,7 +43,7 @@ class Courses extends Component {
                         <Col sm={12} md={6} lg={6}>
                             <Row>
                                 <Col lg={6} md={6} sm={12}>
-                                    <img className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
+                                    <img alt="img" className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
                                 </Col>
 
                                 <Col lg={6} md={6} sm={12}>
@@ -57,7 +57,7 @@ class Courses extends Component {
                         <Col sm={12} md={6} lg={6}>
                             <Row>
                                 <Col lg={6} md={6} sm={12}>
-                                    <img className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
+                                    <img alt="img" className="courseImg" src="https://www.tempo.io/hubfs/Pages/Global/demo-image.svg" />
                                 </Col>
 
                                 <Col lg={6} md={6} sm={12}>

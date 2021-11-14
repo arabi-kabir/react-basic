@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
 import {BigPlayButton, Player} from "video-react";
-import {Link} from "react-router-dom";
 
 class CourseDetails extends Component {
     render() {

@@ -8,7 +8,7 @@ class ProjectDetails extends Component {
                 <Container className="mt-5">
                     <Row>
                         <Col lg={6} md={6} sm={12}>
-                            <img style={{ width: "100%" }} src="https://www.seekpng.com/png/detail/60-604032_face-businessman-png-dummy-images-for-testimonials.png" alt="img" />
+                            <img alt="img" style={{ width: "100%" }} src="https://www.seekpng.com/png/detail/60-604032_face-businessman-png-dummy-images-for-testimonials.png" alt="img" />
                         </Col>
 
                         <Col lg={6} md={6} sm={12}>

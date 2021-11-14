@@ -37,12 +37,12 @@ class Summary extends Component {
                                     <Card className="workCard">
                                         <Card.Body>
                                             <Card.Title className="cardTitle">How i work</Card.Title>
-                                            <Card.Text style={{ textAlign: 'left' }}>
+                                            <div style={{ textAlign: 'left' }}>
                                                 <p className="cardSubTitle"> <FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Requirement gathering</p>
                                                 <p className="cardSubTitle"> <FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> System analysis</p>
                                                 <p className="cardSubTitle"> <FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Coding Testing</p>
                                                 <p className="cardSubTitle"> <FontAwesomeIcon className="iconBullet" icon={faCheckCircle} /> Implementation</p>
-                                            </Card.Text>
+                                            </div>
                                         </Card.Body>
                                     </Card>
                                 </Col>
