@@ -1,8 +1,8 @@
 import axios from "axios";
 
 class RestClient {
-    static getRequest(url) {
-        axios.get(url).then(response => {
+    static getRequest = (url) => {
+        return axios.get(url).then(response => {
             return response.data;
         }).catch(error => {
             return null;
