@@ -50,7 +50,7 @@ class TopNavigation extends Component {
                 <Navbar variant={this.state.navVariant} className={this.state.navBarBack} fixed="top" collapseOnSelect expand="lg">
                     <Container fluid={true}>
                         <div>
-                            <NavLink className={this.state.navBarTitle} to="/"> <img src={this.state.navBarLogo}/> ARABI KABIR </NavLink>
+                            <NavLink className={this.state.navBarTitle} to="/"> <img src={this.state.navBarLogo}/> Site 1 </NavLink>
                         </div>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">

@@ -14,7 +14,15 @@ class TopBanner extends Component {
     }
     componentDidMount() {
         RestClient.getRequest(AppUrl.homeTopTitle).then(result => {
-            // console.log(result)
+            this.setState({
+                title: result[0].home_title,
+                subtitle: result[0].home_subtitle
+            })
+        }).catch(error => {
+            this.setState({
+                title: '',
+                subtitle: ''
+            })
         })
     }
 
