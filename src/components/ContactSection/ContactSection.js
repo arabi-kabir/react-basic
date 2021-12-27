@@ -2,8 +2,27 @@ import React, {Component, Fragment} from 'react';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class ContactSection extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            footerData: []
+        }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.footer).then(result => {
+            console.log(result)
+            this.setState({
+                footerData: result[0],
+            })
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -36,9 +55,9 @@ class ContactSection extends Component {
 
                         <Col lg={6} md={6} sm={12}>
                             <h1 className="serviceName">Discuss Now</h1>
-                            <p style={{ marginBottom: '5px' }} className="serviceDescription">Dhanmondi, Dhaka, 1202</p>
-                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faEnvelope} /> mail2arabi@gmail.com</p>
-                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faPhone} /> +0992323232</p>
+                            <p style={{ marginBottom: '5px' }} className="serviceDescription">{this.state.footerData.address}</p>
+                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faEnvelope} /> {this.state.footerData.email}</p>
+                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faPhone} /> {this.state.footerData.email}</p>
                         </Col>
                     </Row>
                 </Container>

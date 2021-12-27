@@ -4,42 +4,47 @@ import {Container, Row, Col} from "react-bootstrap";
 import graphicsLogo from '../../asset/image/graphics.svg';
 import webLogo from '../../asset/image/web.svg';
 import mobileLogo from '../../asset/image/mobile.svg';
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class Service extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            myData: []
+        }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.service).then(result => {
+            this.setState({
+                myData: result,
+            })
+        })
+    }
+
     render() {
+        const myList = this.state.myData;
+
+        const my_view = myList.map(myList => {
+            return  <Col lg={4} md={6} sm={12}>
+                <div className="serviceCard text-center">
+                    <img alt="img" style={{height: '200px'}} src={myList.service_logo}/>
+                    <h2 className="serviceName">{myList.service_name}</h2>
+                    <p className="serviceDescription">{myList.service_description}</p>
+                </div>
+            </Col>
+        })
+
         return (
             <Fragment>
                 <Container className="text-center">
                     <h1 className="serviceMainTitle">MY SERVICES</h1>
 
                     <Row>
-                        <Col lg={4} md={6} sm={12}>
-                            <div className="serviceCard text-center">
-                                <img alt="img" src={webLogo}/>
-                                <h2 className="serviceName">Web Development</h2>
-                                <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur explicabo facilis molestias qui,
-                                    repellendus totam ullam voluptatum. A alias asperiores consequatur eos illo maiores, praesentium
-                                </p>
-                            </div>
-                        </Col>
-                        <Col lg={4} md={6} sm={12}>
-                            <div className="serviceCard text-center">
-                                <img alt="img" src={mobileLogo}/>
-                                <h2 className="serviceName">Mobile Development</h2>
-                                <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur explicabo facilis molestias qui,
-                                    repellendus totam ullam voluptatum. A alias asperiores consequatur eos illo maiores, praesentium
-                                </p>
-                            </div>
-                        </Col>
-                        <Col lg={4} md={6} sm={12}>
-                            <div className="serviceCard text-center">
-                                <img alt="img" src={graphicsLogo}/>
-                                <h2 className="serviceName">Graphics Design</h2>
-                                <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur explicabo facilis molestias qui,
-                                    repellendus totam ullam voluptatum. A alias asperiores consequatur eos illo maiores, praesentium
-                                </p>
-                            </div>
-                        </Col>
+                        {my_view}
                     </Row>
                 </Container>
             </Fragment>

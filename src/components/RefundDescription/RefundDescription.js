@@ -1,30 +1,33 @@
 import React, {Component, Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
+import ReactHtmlParser from "react-html-parser";
 
 class RefundDescription extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            desc: []
+        }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.information).then(result => {
+            this.setState({
+                desc: result[0]['refund'],
+            })
+        })
+    }
+
     render() {
         return (
             <Fragment>
                 <Container className="mt-5">
                     <Row>
                         <Col>
-                            <ul>
-                                <li>lorem ispanmd  asajhj asdasa</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad alias corporis, cupiditate debitis dicta ev
-                                    eniet, id magni nisi of
-                                    ficia unde, voluptas voluptates voluptatibus. Cupiditate ducimus enim quis similique veniam.
-                                </li>
-                                <li>lorem ispanmd  asajhj asdasa</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad alias corporis, cupiditate debitis dicta ev
-                                    eniet, id magni nisi of
-                                    ficia unde, voluptas voluptates voluptatibus. Cupiditate ducimus enim quis similique veniam.
-                                </li>
-                                <li>lorem ispanmd  asajhj asdasa</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad alias corporis, cupiditate debitis dicta ev
-                                    eniet, id magni nisi of
-                                    ficia unde, voluptas voluptates voluptatibus. Cupiditate ducimus enim quis similique veniam.
-                                </li>
-                            </ul>
+                            {ReactHtmlParser(this.state.desc)}
                         </Col>
                     </Row>
                 </Container>

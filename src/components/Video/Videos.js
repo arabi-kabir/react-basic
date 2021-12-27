@@ -4,14 +4,28 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlayCircle} from "@fortawesome/free-solid-svg-icons";
 import 'video-react/dist/video-react.css';
 import { Player, BigPlayButton } from 'video-react';
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class Videos extends Component {
     constructor() {
         super();
 
         this.state = {
-            show: false
+            show: false,
+
+            video_description: '',
+            video_url: ''
         }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.videoHome).then(result => {
+            this.setState({
+                video_description: result[0].video_description,
+                video_url: result[0].video_url,
+            })
+        })
     }
 
     modalClose = () => {
@@ -35,8 +49,7 @@ class Videos extends Component {
                             <div>
                                 <p className="videoTitle">How I Do</p>
                                 <p className="videoDes">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur at, consectetur debitis dicta doloremque doloribus ex excepturi iusto maiores,
-                                    minima nobis nulla numquam odio odit pariatur perferendis quaerat, similique!
+                                    {this.state.video_description}
                                 </p>
                                 <p>
                                     <FontAwesomeIcon onClick={this.modalOpen} className="iconBullet playBtn" icon={faPlayCircle} />
@@ -49,7 +62,7 @@ class Videos extends Component {
                 <Modal size="lg" show={this.state.show} onHide={this.modalClose}>
                     <Modal.Body>
                         <Player>
-                            <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+                            <source src={this.state.video_url} />
                             <BigPlayButton position="center" />
                         </Player>
                     </Modal.Body>

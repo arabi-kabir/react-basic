@@ -1,35 +1,35 @@
 import React, {Component, Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
+import ReactHtmlParser from 'react-html-parser';
 
 class AboutDescription extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            desc: []
+        }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.information).then(result => {
+            this.setState({
+                desc: result[0]['about'],
+            })
+        })
+    }
+
     render() {
         return (
             <Fragment>
                 <Container className="mt-5">
                     <Row>
                         <Col>
-                            <h2 className="serviceName">WHO I AM</h2>
-                            <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Ab accusantium dolores doloribus eaque harum, ipsa laborum
-                                magni maiores maxime nisi officia quae, quam quisquam reiciendis rerum sint ullam
-                                unde voluptates.
-                            </p>
-
-                            <h2 className="serviceName">MY MISSION</h2>
-                            <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Ab accusantium dolores doloribus eaque harum, ipsa laborum
-                                magni maiores maxime nisi officia quae, quam quisquam reiciendis rerum sint ullam
-                                unde voluptates.
-                            </p>
-
-                            <h2 className="serviceName">MY VISION</h2>
-                            <p className="serviceDescription">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Ab accusantium dolores doloribus eaque harum, ipsa laborum
-                                magni maiores maxime nisi officia quae, quam quisquam reiciendis rerum sint ullam
-                                unde voluptates.
-                            </p>
+                            {ReactHtmlParser(this.state.desc)}
                         </Col>
-                    </Row>
+                     </Row>
                 </Container>
             </Fragment>
         );

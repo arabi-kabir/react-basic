@@ -1,54 +1,50 @@
 import React, {Component, Fragment} from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class AllProjects extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            myData: []
+        }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.projects3).then(result => {
+            console.log(result)
+            this.setState({
+                myData: result,
+            })
+        })
+    }
+
     render() {
+        const myList = this.state.myData;
+
+        const my_view = myList.map(myList => {
+            return <Col className="p-2" sm={12} md={6} lg={4}>
+                <Card className="projectCard">
+                    <Card.Img variant="top" src={myList.img_one} />
+                    <Card.Body>
+                        <Card.Title className="projectCardTitle">{myList.project_name}</Card.Title>
+                        <Card.Text className="projectCardDes">
+                            {myList.short_description}
+                        </Card.Text>
+                        <Button variant="primary"><Link className="link-style" to="/project-details">Details</Link></Button>
+                    </Card.Body>
+                </Card>
+            </Col>
+        })
+
         return (
             <Fragment>
                 <Container className="text-center mt-5">
                     <Row>
-                        <Col className="p-2" sm={12} md={6} lg={4}>
-                            <Card className="projectCard">
-                                <Card.Img alt="img" variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary"><Link className="link-style" to="/project-details">Details</Link></Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-
-                        <Col className="p-2" sm={12} md={6} lg={4}>
-                            <Card className="projectCard">
-                                <Card.Img alt="img" variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary"><Link className="link-style" to="/project-details">Details</Link></Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-
-                        <Col className="p-2" sm={12} md={6} lg={4}>
-                            <Card className="projectCard">
-                                <Card.Img alt="img" variant="top" src="https://thumbs.dreamstime.com/b/request-demo-inscription-blue-keyboard-key-written-metallic-finger-pressing-166070644.jpg" />
-                                <Card.Body>
-                                    <Card.Title className="projectCardTitle">Card Title</Card.Title>
-                                    <Card.Text className="projectCardDes">
-                                        Some quick example text to build on the card title and make up the bulk of
-                                        the card's content.
-                                    </Card.Text>
-                                    <Button variant="primary"><Link className="link-style" to="/project-details">Details</Link></Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
+                        {my_view}
                     </Row>
                 </Container>
             </Fragment>

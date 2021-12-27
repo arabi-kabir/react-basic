@@ -1,6 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
+import ReactHtmlParser from 'react-html-parser';
 
 
 class Analysis extends Component {
@@ -8,17 +11,23 @@ class Analysis extends Component {
         super();
 
         this.state = {
-            data: [
-                { Technology: 'Java', Projects: 100 },
-                { Technology: 'PHP', Projects: 50 },
-                { Technology: 'C++', Projects: 10 },
-                { Technology: 'GO', Projects: 20 },
-                { Technology: 'Python', Projects: 90 },
-                { Technology: 'Kotlin', Projects: 70 },
-                { Technology: 'Node', Projects: 50 },
-                { Technology: 'React', Projects: 80 },
-            ]
+            data: [],
+            techDesc: ''
         }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.chartData).then(result => {
+            this.setState({
+                data: result,
+            })
+        })
+
+        RestClient.getRequest(AppUrl.techDescription).then(result => {
+            this.setState({
+                techDesc: result[0]['tech_description'],
+            })
+        })
     }
 
     render() {
@@ -40,14 +49,7 @@ class Analysis extends Component {
 
                         <Col sm={12} md={12} lg={6}>
                             <p style={{ textAlign: 'justify' }} className="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at atque culpa
-                                dolorum eligendi hic, nemo numquam perspiciatis quisquam repudiandae tenetur vel,
-                                voluptatem. Architecto assumenda commodi cupiditate perferendis rerum velit.
-                            </p>
-
-                            <p style={{ textAlign: 'justify' }} className="des">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at atque culpa andae tenetur vel,
-                                voluptatem. Architecto assumenda commodi cupiditate perferendis rerum velit.
+                                { ReactHtmlParser(this.state.techDesc)}
                             </p>
                         </Col>
                     </Row>

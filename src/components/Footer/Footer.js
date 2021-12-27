@@ -4,8 +4,27 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faFacebook, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
+import RestClient from "../../RestAPI/RestClient";
+import AppUrl from "../../RestAPI/AppUrl";
 
 class Footer extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            footerData: []
+        }
+    }
+
+    componentDidMount() {
+        RestClient.getRequest(AppUrl.footer).then(result => {
+            console.log(result)
+            this.setState({
+                footerData: result[0],
+            })
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -13,16 +32,16 @@ class Footer extends Component {
                     <Row>
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
                             <h1 className="serviceName">Follow Me</h1>
-                            <a className="socialLink" href="#"><FontAwesomeIcon  icon={faFacebook} /> Facebook</a>
+                            <a className="socialLink" href={this.state.footerData.facebook}><FontAwesomeIcon  icon={faFacebook} /> Facebook</a>
                             <br/>
-                            <a className="socialLink" href="#"><FontAwesomeIcon  icon={faYoutube} /> Youtube</a>
+                            <a className="socialLink" href={this.state.footerData.facebook}><FontAwesomeIcon  icon={faYoutube} /> Youtube</a>
                         </Col>
 
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
                             <h1 className="serviceName">Address</h1>
-                            <p style={{ marginBottom: '5px' }} className="serviceDescription">Dhanmondi, Dhaka, 1202</p>
-                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faEnvelope} /> mail2arabi@gmail.com</p>
-                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faPhone} /> +0992323232</p>
+                            <p style={{ marginBottom: '5px' }} className="serviceDescription">{this.state.footerData.address}</p>
+                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faEnvelope} /> {this.state.footerData.email}</p>
+                            <p style={{ marginBottom: '5px' }} className="serviceDescription"><FontAwesomeIcon  icon={faPhone} /> {this.state.footerData.email}</p>
                         </Col>
 
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
@@ -44,7 +63,7 @@ class Footer extends Component {
                 </Container>
 
                 <Container fluid={true} className="text-center copyrightSection">
-                    <a className="copyrightLink" href="#">arabikabir.com @ copy 2021</a>
+                    <a className="copyrightLink" href="#">{this.state.footerData.footer_credit}</a>
                 </Container>
             </Fragment>
         );
