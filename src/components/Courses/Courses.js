@@ -34,7 +34,7 @@ class Courses extends Component {
                     <Col lg={6} md={6} sm={12}>
                         <h5 className="courseTitle" style={{ textAlign: 'justify' }}>{myList.short_title}</h5>
                         <p className="courseDes" style={{ textAlign: 'justify' }}>{myList.short_description}</p>
-                        <Link className="courseDetails" style={{ float: 'left' }} to="/course-details">Details</Link>
+                        <Link className="courseDetails" style={{ float: 'left' }} to={"/course-details/" + myList.id}>Details</Link>
                     </Col>
                 </Row>
             </Col>

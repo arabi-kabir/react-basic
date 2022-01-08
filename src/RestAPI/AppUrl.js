@@ -5,13 +5,13 @@ class AppUrl {
     static techDescription = this.baseUrl +'/tech-description';
     static totalProjectClient = this.baseUrl +'/total-project-client';
     static videoHome = this.baseUrl +'/video-home';
-    static projectsDetails = this.baseUrl +'/projects-details';
+    static projectsDetails = this.baseUrl +'/projects-details/';
     static projects3 = this.baseUrl +'/projects-3';
     static projects = this.baseUrl +'/projects';
     static service = this.baseUrl +'/service';
     static information = this.baseUrl +'/information';
     static footer = this.baseUrl +'/footer';
-    static courseDetails = this.baseUrl +'/course-details';
+    static courseDetails = this.baseUrl +'/course-details/';
     static courseAll = this.baseUrl +'/course-all';
     static courseHome = this.baseUrl +'/course-home';
     static contactSend = this.baseUrl +'/contact-send';

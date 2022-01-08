@@ -8,6 +8,20 @@ class RestClient {
             return null;
         })
     }
+
+    static postRequest = (postURL, postData) => {
+        let config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        return axios.post(postURL, postData, config).then(response => {
+            return response.data;
+        }).catch(error => {
+            return null;
+        })
+    }
 }
 
 export default RestClient;

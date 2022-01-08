@@ -23,6 +23,24 @@ class ContactSection extends Component {
         })
     }
 
+    sendContact() {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+
+        let jsonObject = {
+            name: name,
+            email: email,
+            msg: message,
+        }
+
+        RestClient.postRequest(AppUrl.contactSend, jsonObject).then(result => {
+            alert("success");
+        }).catch(error => {
+            alert(error);
+        });
+    }
+
     render() {
         return (
             <Fragment>
@@ -34,20 +52,20 @@ class ContactSection extends Component {
                             <Form>
                                 <Form.Group className="mb-3">
                                     <Form.Label className="serviceDescription">Name</Form.Label>
-                                    <Form.Control type="text" />
+                                    <Form.Control type="text" id="name" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3">
                                     <Form.Label className="serviceDescription">Email Address</Form.Label>
-                                    <Form.Control type="email" />
+                                    <Form.Control type="email" id="email" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3">
                                     <Form.Label className="serviceDescription">Message</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
+                                    <Form.Control as="textarea" rows={3} id="message" />
                                 </Form.Group>
 
-                                <Button variant="primary" type="submit">
+                                <Button variant="primary" type="button" onClick={this.sendContact}>
                                     Submit
                                 </Button>
                             </Form>

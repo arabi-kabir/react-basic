@@ -32,9 +32,9 @@ class Footer extends Component {
                     <Row>
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
                             <h1 className="serviceName">Follow Me</h1>
-                            <a className="socialLink" href={this.state.footerData.facebook}><FontAwesomeIcon  icon={faFacebook} /> Facebook</a>
+                            <a  target="_blank" className="socialLink" href={this.state.footerData.facebook}><FontAwesomeIcon  icon={faFacebook} /> Facebook</a>
                             <br/>
-                            <a className="socialLink" href={this.state.footerData.facebook}><FontAwesomeIcon  icon={faYoutube} /> Youtube</a>
+                            <a target="_blank" className="socialLink" href={this.state.footerData.facebook}><FontAwesomeIcon  icon={faYoutube} /> Youtube</a>
                         </Col>
 
                         <Col lg={3} md={3} sm={12} className="p-5" style={{ textAlign: 'justify' }}>
