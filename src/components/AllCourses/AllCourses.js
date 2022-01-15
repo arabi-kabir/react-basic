@@ -3,13 +3,15 @@ import {Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
+import Loading from "../Loading/Loading";
 
 class AllCourses extends Component {
     constructor() {
         super();
 
         this.state = {
-            myData: []
+            myData: [],
+            loading: true
         }
     }
 
@@ -17,11 +19,16 @@ class AllCourses extends Component {
         RestClient.getRequest(AppUrl.courseAll).then(result => {
             this.setState({
                 myData: result,
+                loading: false
             })
         })
     }
 
     render() {
+        if(this.state.loading) {
+            return <Loading />
+        }
+
         const myList = this.state.myData;
 
         const my_view = myList.map(myList => {
@@ -52,6 +59,7 @@ class AllCourses extends Component {
             </Fragment>
         );
     }
+
 }
 
 export default AllCourses;

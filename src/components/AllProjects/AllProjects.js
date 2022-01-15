@@ -3,13 +3,15 @@ import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
+import Loading from "../Loading/Loading";
 
 class AllProjects extends Component {
     constructor() {
         super();
 
         this.state = {
-            myData: []
+            myData: [],
+            loading: true
         }
     }
 
@@ -18,11 +20,16 @@ class AllProjects extends Component {
             console.log(result)
             this.setState({
                 myData: result,
+                loading: false
             })
         })
     }
 
     render() {
+        if(this.state.loading) {
+            return <Loading />
+        }
+
         const myList = this.state.myData;
 
         const my_view = myList.map(myList => {

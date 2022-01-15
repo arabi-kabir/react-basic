@@ -6,26 +6,41 @@ import {faEnvelope, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 import RestClient from "../../RestAPI/RestClient";
 import AppUrl from "../../RestAPI/AppUrl";
+import WentWrong from "../WentWrong/WentWrong";
 
 class Footer extends Component {
     constructor() {
         super();
 
         this.state = {
-            footerData: []
+            footerData: [],
+            error: false
         }
     }
 
     componentDidMount() {
         RestClient.getRequest(AppUrl.footer).then(result => {
-            console.log(result)
+            if(result == null) {
+                this.setState({
+                    error: true
+                })
+            }
+
             this.setState({
                 footerData: result[0],
+            })
+        }).catch(error => {
+            this.setState({
+                error: true
             })
         })
     }
 
     render() {
+        if(this.state.error) {
+            return <WentWrong />
+        }
+
         return (
             <Fragment>
                 <Container fluid={true} className="footerSection text-center">
